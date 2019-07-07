@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>    
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(document).ready(function() {
+    
+        addEventListener("keydown", function(event) {
+            if (event.keyCode == 49) {
+              if(document.getElementById("video_cl").innerHTML == "") {
+                document.getElementById("video_cl").innerHTML = "<img src=\"{{ url_for('video_color') }}\", height=\"95%\">"
+              }
+              else {
+                document.getElementById("video_cl").innerHTML = ""
+              }
+            }
+            if (event.keyCode == 50) {
+              if(document.getElementById("video_all").innerHTML == "") {
+                document.getElementById("video_all").innerHTML = "<img src=\"{{ url_for('all_color') }}\", height=\"95%\">"
+              }
+              else {
+                document.getElementById("video_all").innerHTML = ""
+              }
+            }
+        });
+      });
+    </script>
+    <p id="video_bl"><img src="{{ url_for('video') }}", height="95%"></p>
+    <p id="video_cl"></p>
+    <p id="video_all"></p>
+  </body>
+</html>
+
